@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 import 'package:real_estate/screens/Youtube.dart';
 import 'package:flutter/material.dart';
 import 'package:real_estate/customs/BorderIcon.dart';
@@ -81,7 +81,7 @@ class LandingPage extends StatelessWidget {
                           //   ChoiceOption(text: "5"),
                           //   ChoiceOption(text: "6"),
                           // ]
-                          ["1asdfk;ajsgkjald", "2", "3", "4", "5", "6"]
+                          ["1", "2", "3", "4", "5", "6"]
                               .map((filter) => ChoiceOption(text: filter))
                               .toList(),
                     ),
@@ -172,14 +172,12 @@ class RealEstateItem extends StatelessWidget {
       onTap: () {
         Navigator.of(context).push(
           MaterialPageRoute(
-            builder: (context) => Youtube(),
+            builder: (context) => Youtube(
+              url:itemData["url"],
+            ),
           ),
         );
       },
-      // onTap: (){
-      //
-      // },
-
       child: Container(
         margin: const EdgeInsets.symmetric(vertical: 20),
         child: Column(
